@@ -15,8 +15,6 @@ mongodb.MongoClient.connect('mongodb+srv://prabhu:bMqWYB7VAOu9BGma@cluster0.8o6b
     console.log('MongoDB connected...')
 })
 
-//let patients = mongoose.mongo
-
 app.get('/',(req,res) => {
     res.send('Greetings, people of earth!!!')
 })
@@ -81,25 +79,6 @@ app.post('/getdata',(req,res) => {
             res.send(`${prob}`)
         }
     })
-    /*dbo.collection('patients').find({ RACE: race, ETHNICITY: ethnicity, GENDER: gender, COUNTY: county }).toArray((err,results) => {
-        if(err)
-            throw err
-        console.log(results)
-        if(results.length === 0){
-            dbo.collection('patients').find({ RACE: race, ETHNICITY: ethnicity, GENDER: gender }).toArray((err,results) => {
-                if(err)
-                    throw err
-                console.log(results.length)
-                if(results.length === 0){
-                    dbo.collection('patients').find({ ETHNICITY: ethnicity, GENDER: gender }).toArray((err,results) => {
-                        if(err)
-                            throw err
-                        console.log(results.length)
-                    })
-                }
-            })
-        }
-    })*/
 })
 
 let port = process.env.PORT || 3000
